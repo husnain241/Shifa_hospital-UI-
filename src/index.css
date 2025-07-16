@@ -1,0 +1,218 @@
+/* Navbar nav item hover effect */
+
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root {
+  --primary-blue: #0056b3;
+  --secondary-blue: #e3f2fd;
+  --success-green: #28a745;
+  --danger-red: #dc3545;
+  --warning-orange: #ffc107;
+  --gradient-start: #914ade;
+  --gradient-end: #3e79df;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--primary-blue) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-blue);
+  border-color: var(--primary-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #004494;
+  border-color: #004494;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link {
+  color: var(--primary-blue) !important;
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+  color: #fff !important;
+  background: var(--primary-blue);
+  border-radius: 0.5rem;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section {
+  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  color: white;
+  padding: 4rem 0;
+}
+
+.chat-container {
+  height: 70vh;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  overflow-y: auto;
+  background: white;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 15px;
+  max-width: 70%;
+}
+
+.message.user {
+  background-color: var(--primary-blue);
+  color: white;
+  margin-left: auto;
+  text-align: right;
+}
+
+.message.bot {
+  background-color: #f1f3f4;
+  color: #333;
+}
+
+.doctor-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.availability-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
+.status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.status-available {
+  background-color: var(--success-green);
+  animation: pulse 2s infinite;
+}
+
+.status-busy {
+  background-color: var(--danger-red);
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+
+
+.navigation-map {
+  background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  border: 2px solid #dee2e6;
+  border-radius: 15px;
+  padding: 2rem;
+  min-height: 400px;
+  position: relative;
+}
+
+.room-marker {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.room-marker:hover {
+  transform: scale(1.2);
+}
+
+.footer {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+
+.admin-sidebar {
+  background-color: #343a40;
+  min-height: 100vh;
+  color: white;
+}
+
+.admin-nav-link {
+  color: #adb5bd;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.admin-nav-link:hover,
+.admin-nav-link.active {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid var(--primary-blue);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+  }
+  
+  .chat-container {
+    height: 60vh;
+  }
+  
+  .navigation-map {
+    min-height: 300px;
+  }
+}
